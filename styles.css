@@ -22,10 +22,10 @@
     /* .card {
       duplicate selector created again to add new styles.
     } */
-*/
+
 
 /*
-  TODO 0: Link the style sheet using the link tag inside the head tag.
+    TODO 0: Link the style sheet using the link tag inside the head tag.
 */
 
 /* TODO 1:
@@ -34,18 +34,29 @@
       2. Define --brand-dark variable and set a darker color value of #1d4ed8 for hover states
   - Apply a global box-sizing reset using the universal selector (hint use * selector).
 */
-
-*{
-  box-sizing: border-box;
+:root {
+  --muted: #6b7280;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --brand: #2563eb;
+  --brand-dark: #1d4ed8;
 }
+
+*{box-sizing: border-box;}
+
 /* TODO 2:
    - Give .site-header & .site-footer a subtle background using var(--card)
    - Make the .tagline class a bit muted (use var(--muted))
 */
+.site-footer,
+.site-header {
+  background: var(--card);
+}
 
 .tagline {
   color: var(--muted);
 }
+
 /* TODO 3:
    - Set the color to the brand variable and make the text bold for the .color-demo .color-note class.
    - Set the color to var(--muted) and the font size to 0.95rem for the .color-demo .muted class.
@@ -53,7 +64,7 @@
 */
 .color-demo .color-note {
   color: var(--brand);
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .color-demo .muted {
@@ -66,44 +77,43 @@
   min-height: 80px;
   padding: 0.75rem;
   margin-block: 0.75rem;
-  border-radius: 0.75rem;
+  border-radius: 12px;
   color: #fff;
   background: linear-gradient(135deg, var(--brand), #22c55e);
 }
+
+
 
 /* TODO 4:
    - For the .inline-label class: make it behave like an inline-block element with small padding of 0.25rem and 0.5 rem and a border of width 1 px, type as solid line, and set color of value rgba(0, 0, 0, 0.18).
    - For the .inline-label.alt class: ensure it stays inline with others but use a different border style e.g. dashed.
 */
-.inline-label{
+.inline-label {
   display: inline-block;
   padding: 0.25rem 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.18);
 }
-.inline-label.alt{
+
+.inline-label.alt {
   border-style: dashed;
 }
+
 /* TODO 5:
    - For the .copy .title class: choose any font-size (use rem), a font-weight between 600–700,
      and apply text-transform: capitalize.
    - For the .copy .intro class: set the font-style to italic and slightly increase the line-height and set the top margin of 0.25 rem.
 */
-.copy .title{
-  font-size: 0.8rem;
-  font-weight: 677;
+
+.copy .title {
+  font-size: 2rem;
+  font-weight: 700;
   text-transform: capitalize;
 }
-.copy .intro{
+
+.copy .intro {
   font-style: italic;
-  line-height: 1.7;
+  line-height: 2;
   margin-top: 0.25rem;
-}
-.copy {
-  border: 1px solid rgba(0.5, 0.3, 0.8, 0.58);
-  border-radius: 12px;
-  padding: 1rem;
-  margin-top: 0.75rem;
-  background: var(--card);
 }
 
 /* TODO 6:
@@ -113,25 +123,24 @@
    - For the .product-grid class: create a responsive flex grid by setting display:flex,
      wrapping items using flex-wrap as wrap, adding a gap of 0.75rem, and top margin of 0.75rem.
    - For the .product-grid .item class: Make each item flexible with a flex grow of 1px, flex shrinnk of 1px, and minimum width of 140px, set a minimum height of 90px, apply a soft background and rounded corners, center the content using flexbox, and make the text bold e.g. 700.
-*/
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
-}
+*/.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
 .btn {
-  padding: 0.5rem 0.75rem;
-  border: 0;
-  background: var(--brand);
-  color: #fff;
-  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
   cursor: pointer;
+  background: #e5e7eb;
+  border-radius: 6px;
 }
 
 .btn:hover {
   background: var(--brand-dark);
+  color: #fff;
 }
 
 .product-grid {
@@ -144,13 +153,11 @@
 .product-grid .item {
   flex: 1 1 140px;
   min-height: 90px;
-  background: var(--card);
-  border-radius: 0.75rem;
-
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: 700;
 }
 
@@ -163,7 +170,6 @@
   background: rgba(0, 0, 0, 0.05);
   margin-bottom: 0.5rem;
 }
-
 /* Base CSS (already provided for you).*/
 
 html,
@@ -203,6 +209,7 @@ body {
   border-radius: 12px;
   padding: 1rem 1.25rem;
   margin-block: 1rem;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.8);
 }
 
 .box-row {
@@ -221,10 +228,6 @@ body {
   min-height: 260px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
-}
-
-.card {
-  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
 }
 
 .copy .sample-text {
