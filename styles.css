@@ -98,6 +98,14 @@
   line-height: 1.7;
   margin-top: 0.25rem;
 }
+.copy {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  background: var(--card);
+}
+
 /* TODO 6:
    - For the .toolbar class: make it a flex container, distribute items with space-between,
      align them vertically in the center, and add a gap.
